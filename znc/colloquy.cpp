@@ -826,7 +826,7 @@ public:
 			if (m_debug) {
 			PutModule("debug: idleTest Pass... "+CString(m_lastActivity) + " < " + CString(time(NULL)-m_idleAfterMinutes*60)+" | #" +sChannel + " "+sMessage);
 			}
-			if (!pDevice->Push(sNick, sPushMessage, sChannel, bHilite, iBadge)) {
+			if (!sPushMessage.Equals("") && !pDevice->Push(sNick, sPushMessage, sChannel, bHilite, iBadge)) {
 				bRet = false;
 			}
 		}
